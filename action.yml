@@ -40,9 +40,6 @@ inputs:
     description: "When 'true', use the freethreaded version of Python."
     default: false
   pip-version:
-    description: "Used to specify the version of pip to install with the Python. Supported format: major[.minor][.patch]."
-  pip-install:
-  pip-version:
     description: "Used to specify the version of pip to install with the Python. Supported format: major[.minor][.patch]. If unset, the action tries to install a default pip non-fatally."
 outputs:
   python-version:
