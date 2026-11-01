@@ -114,7 +114,6 @@ This action supports the following inputs (in bold are the names of the exclusiv
 |freethreaded|When 'true', use the freethreaded version of Python.|`true`, `false`|`false`|
 |allow-prereleases|When 'true', a version range passed to 'python-version' input will match prerelease versions if no GA versions are found. Only 'x.y' version range is supported for CPython.|`true`, `false`|`false`|
 |pip-version|Used to specify the version of pip to install with the Python. Supported format: `major[.minor][.patch]`.|`20.0.0`, `22`|`None`|
-|pip-install|Used to specify the packages to install with pip after setting up Python. Can be a requirements file or package names.|`pandas numpy`, `requirements.txt`|`None`|
 |**cache-build**|Whether to cache the built Python distribution to speed up successive runs.|`true`, `false`|`false`|
 |**allow-build**|Set the behavior of the action when [actions/setup-python](https://github.com/actions/setup-python) fails and has to be built from source.|`allow`, `info`, `warn`, `error`, `force`|`warn`|
 

@@ -42,7 +42,8 @@ inputs:
   pip-version:
     description: "Used to specify the version of pip to install with the Python. Supported format: major[.minor][.patch]."
   pip-install:
-    description: "Used to specify the packages to install with pip after setting up Python. Can be a requirements file or package names."
+  pip-version:
+    description: "Used to specify the version of pip to install with the Python. Supported format: major[.minor][.patch]. If unset, the action tries to install a default pip non-fatally."
 outputs:
   python-version:
     description: "The installed Python or PyPy version. Useful when given a version range as input."
@@ -80,4 +81,8 @@ runs:
         update-environment: ${{ inputs.update-environment }}
         freethreaded: ${{ steps.build.outputs.freethreaded }}
         pip-version: ${{ inputs.pip-version }}
-        pip-install: ${{ inputs.pip-install }}
+    - run: ${{ github.action_path }}/setup_pip.ps1
+      shell: pwsh
+      env:
+        PYTHON_VERSION: ${{ steps.setup.outputs.python-version }}
+        SETUP_PYTHON_PATH: ${{ steps.setup.outputs.python-path }}
